@@ -29,8 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('adminlist/', admin_views.showAdmin, name='Admin'),
     path('profile/', visitor_views.show_profile, name='showProfile'),
-    path('createprofile/', visitor_views.createProfile, name='createProfile' ),
-    path('updateprofile/', visitor_views.updateProfile, name='updateProfile'),
+    path('updateprofile/', visitor_views.createProfile, name='createProfile' ),
 
     path('comment/', comment_views.showComment, name='Comment'),
     path('insertcomment/', comment_views.insertComment, name='insertComment'),

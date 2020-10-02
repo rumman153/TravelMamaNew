@@ -8,66 +8,56 @@ from django.template import RequestContext
 
 @login_required
 def createProfile(request):
-   message = ""
-   form = VisitorForm()
 
-   if request.method == "POST":
-       form = VisitorForm(request.POST, request.FILES)
-       message = "Invalid input. Please try again!"
-       if form.is_valid():
+    visitor_list = Visitor.objects.filter(user=request.user)
+    if len(visitor_list) != 0:
+       visitor = Visitor.objects.get(user=request.user)
+       form = VisitorForm(initial={'Visitor_name': visitor.Visitor_name,
+                                    'Visitor_email': visitor.Visitor_email,
+                                    'Gender': visitor.Gender,
+                                    'Visitor_picture': visitor.Visitor_picture,
 
-           Visitor = form.save(commit=False)
+                                    })
+    else:
+       visitor = None
+       form = VisitorForm()
 
-           Visitor.user = request.user
+    if request.method == "POST":
+        form = VisitorForm(request.POST, request.FILES)
 
-           Visitor.save()
+        if form.is_valid():
+            if visitor == None:
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.save()
 
-           message = "Profile is created!"
-           form = VisitorForm()
-
-   context = {
-       'form' : form,
-       'message' : message
-   }
-   return render(request, 'ManageVisitor/createProfile.html', context)
-
-
-@login_required
-def updateProfile(request):
-
-            visitor_list= Visitor.objects.get(user=request.user)
-            if len(visitor_list) != 0:
-                visitor = Visitor.objects.get(user=request.user)
-                form = VisitorForm(initial={'Visitor_name': visitor.Visitor_name,
-                                            'Visitor_email': visitor.Visitor_email,
-                                            'Gender': visitor.Gender,
-                                            'Visitor_picture': visitor.Visitor_picture,
-
-                                            })
             else:
-                visitor = None
-                form = VisitorForm()
+                '''
+                visitor.delete()
 
-            if request.method == "POST":
-                form = VisitorForm(request.POST, request.FILES)
+                visitor = Visitor(form.cleaned_data['Visitor_name'],
+                                    form.cleaned_data['Visitor_email'],
+                                    form.cleaned_data['Gender'],
+                                    form.cleaned_data['Visitor_picture'],
+                                    request.user)
 
-                if form.is_valid:
-                    instance = form.save(commit=False)
-                    instance.user = request.user
+                '''
 
-                    if visitor == None:
-                        instance.save()
-                    else:
-                        visitor.Visitor_email = instance.Visitor_email
-                        visitor.Visitor_picture = instance.Visitor_picture
-                        visitor.save()
+                visitor.Visitor_name = form.cleaned_data['Visitor_name']
+                visitor.Visitor_email = form.cleaned_data['Visitor_email']
+                visitor.Gender = form.cleaned_data['Gender']
+                visitor.Visitor_picture = form.cleaned_data['Visitor_picture']
 
-                        return redirect('showProfile')
 
-                    context = {
-                        'form': form
-                    }
-                    return render(request, 'ManageVisitor/updateProfile.html', context=RequestContext(request))
+                visitor.save()
+
+            return redirect('showProfile')
+    context = {
+
+        'form': form
+    }
+
+    return render(request, 'ManageVisitor/createProfile.html', context)
 
 @login_required
 def show_profile(request):
