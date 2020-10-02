@@ -38,7 +38,7 @@ def insertPost(request):
             post = form.save(commit=False)
             post.User = request.user
             post.save()
-            
+
             message = "Post submitted successfully"
             form = PostForm()
 

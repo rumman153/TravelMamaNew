@@ -36,7 +36,11 @@ def insertComment(request):
         form = CommentForm(request.POST,request.FILES)
         message = "you are wrong!!!!!"
         if form.is_valid():
-            form.save()
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.save()
+
+
             message = "Comment added Successfully,Thanks."
             form = CommentForm()
 
