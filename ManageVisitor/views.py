@@ -33,10 +33,9 @@ def createProfile(request):
 
 @login_required
 def show_profile(request):
-    global Visitor
     try:
-        visitor = Visitor.objects.filter(user=request.user)
-    except visitor.DoesNotExist:
+        visitor = Visitor.objects.get(user=request.user)
+    except Visitor.DoesNotExist:
         visitor = "Please complete your profile to view"
 
     context = {
@@ -44,6 +43,8 @@ def show_profile(request):
     }
 
     return render(request, 'ManageVisitor/showProfile.html', context)
+
+
 
 def registration(request):
     form = UserCreationForm()
