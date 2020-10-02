@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for p in Post %}
+        <h2>Post info:  {{ p.id }} </h2>
+        Post Name: {{ p.Post_title }} <br>
+        Post By: {{ p.User.User_name }} <br>
+        Location: {{ p.Post_location}} <br>
+        Post Category: {{ p.Post_catagory}} <br>
+        Post Tags:{{ p.Post_tags}} <br>
+        Post Image(Optional): <img src="{{ p.Post_image.url }}" width="800" height="500" alt="image"> <br>
+        Post Description: {{ p.Post_description}} <br>
+
+
+
+
+
+    {% endfor %}
+
+{% endblock content %}

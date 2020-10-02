@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for a in Admin %}
+        <h2>Admin info:  {{ a.id }} </h2>
+        {{ a.Admin_name }} <br>
+        <img src="{{ a.Admin_profile.url }}" width="300" height="300" alt="image"> <br>
+        {{ a.Admin_email}} <br>
+        {{ a.Admin_contact}} <br>
+
+
+    {% endfor %}
+
+{% endblock content %}

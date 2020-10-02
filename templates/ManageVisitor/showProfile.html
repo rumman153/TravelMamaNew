@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <table>
+        <tr><td>{{ Visitor.id }}</td></tr>
+        <tr><td>{{ Visitor.user.Visitor_name}}</td></tr>
+        <tr><td>{{ Visitor.Visitor_name}}</td></tr>
+        <tr><td>{{ Visitor.Visitor_email}}</td></tr>
+        <tr><td>{{ Visitor.Gender}}</td></tr>
+
+        <tr><td><img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200"></td></tr>
+
+    </table>
+
+{% endblock content %}
