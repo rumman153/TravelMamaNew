@@ -36,7 +36,7 @@ def show_profile(request):
     global Visitor
     try:
         visitor = Visitor.objects.filter(user=request.user)
-    except Visitor.DoesNotExist:
+    except visitor.DoesNotExist:
         visitor = "Please complete your profile to view"
 
     context = {
