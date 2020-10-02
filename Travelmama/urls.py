@@ -36,6 +36,8 @@ urlpatterns = [
 
     path('post/', post_views.showPost, name='Post'),
     path('insertpost/', post_views.insertPost, name='insertPost'),
+    path('', post_views.showHome, name='Homepage'),
+
 
     path('registration/', visitor_views.registration, name='registration'),
     path('registration/', post_views.registration, name='registration'),

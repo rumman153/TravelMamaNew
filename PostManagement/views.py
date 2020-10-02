@@ -47,3 +47,11 @@ def insertPost(request):
         'message' : message
     }
     return render(request,'PostManagement/insertPost.html', context)
+
+
+def showHome(request):
+    # postList = Post.objects.all()
+    # context = {
+    #     'Post': postList
+    # }
+    return render(request, 'PostManagement/homepage.html')
