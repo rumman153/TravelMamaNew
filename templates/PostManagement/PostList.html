@@ -3,61 +3,71 @@
 {% load static %}
 
 {% block content %}
-    <h2>Post info: </h2>
-    <table border="2">
-        <tr>
-            <th>
-                Post ID
-            </th>
-            <th>
-                Post Title
-            </th>
-            <th>
-                Post By
-            </th>
-            <th>
-                Location
-            </th>
-            <th>
-                Post Catagory
-            </th>
-            <th>
-                Tags
-            </th>
-            <th>
-                Photos
-            </th>
-            <th>
-                Description
-            </th>
-        </tr>
+    <h2>Post </h2>
+{#    <table border="2">#}
+{#        <tr>#}
+{#            <th>#}
+{#                Post ID#}
+{#            </th>#}
+{#            <th>#}
+{#                Post Title#}
+{#            </th>#}
+{#            <th>#}
+{#                Post By#}
+{#            </th>#}
+{#            <th>#}
+{#                Location#}
+{#            </th>#}
+{#            <th>#}
+{#                Post Catagory#}
+{#            </th>#}
+{#            <th>#}
+{#                Tags#}
+{#            </th>#}
+{#            <th>#}
+{#                Photos#}
+{#            </th>#}
+{#            <th>#}
+{#                Description#}
+{#            </th>#}
+{#        </tr>#}
+    <div class="card mb-3">
+
         {% for p in Post %}
-        <tr>
-            <td>
-                {{ p.id }}
-            </td>
-            <td>
-                {{ p.Post_title }}
-            </td>
-            <td>
-                {{ p.User.username }}
-            </td>
-            <td>
-                {{ p.Post_location}}
-            </td>
-            <td>
-                {{ p.Post_catagory}}
-            </td>
-            <td>
-                {{ p.Post_tags}}
-            </td>
-            <td>
-                <img src="{{ p.Post_image.url }}" width="200" height="200" alt="image">
-            </td>
-            <td>
-                 {{ p.Post_description}}
-            </td>
-        </tr>
+{#        <tr>#}
+{#            <td>#}
+{#                {{ p.id }}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ p.Post_title }}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ p.User.username }}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ p.Post_location}}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ p.Post_catagory}}#}
+{#            </td>#}
+{#            <td>#}
+{#                {{ p.Post_tags}}#}
+{#            </td>#}
+{#            <td>#}
+{#                <img src="{{ p.Post_image.url }}" width="200" height="200" alt="image">#}
+{#            </td>#}
+{#            <td>#}
+{#                 {{ p.Post_description}}#}
+{#            </td>#}
+{#        </tr>#}
+
+  <img class="card-img-top" src="{{ p.Post_image.url }}" alt="Card image cap" width="720"height="300">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.Post_title }}</h5>
+    <p class="card-text">   {{ p.Post_description}}</p>
+
+  </div>
+
 
 
 
@@ -72,7 +82,7 @@
 {#        Post Description: {{ p.Post_description}} <br>#}
 
 
-    {% endfor %}
-    </table>
+    {% endfor%}
+    </div>
 
 {% endblock content %}
