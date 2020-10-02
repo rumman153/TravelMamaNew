@@ -3,12 +3,47 @@
 {% load static %}
 
 {% block content %}
+    <h2>Comment Information</h2>
+    <table border="2">
+        <tr>
+            <td>
+                Comment ID
+            </td>
+            <td>
+                Post Title
+            </td>
+            <td>
+                Visitor Comment
+            </td>
+            <td>
+                Commented By
+            </td>
+        </tr>
 
-    {% for c in Comment %}
-        <h2>User info:  {{ c.id }} </h2>
-        {{ c.Comment_description }} <br>
+
+      {% for c in Comment %}
+          <tr>
+            <td>
+                {{ c.id }}
+            </td>
+            <td>
+                 {{ c.Post.Post_title }}
+            </td>
+            <td>
+                {{ c.Comment_description }}
+            </td>
+            <td>
+                {{ c.user.username }}
+            </td>
+          </tr>
+{#        <h2>User info:  {{ c.id }} </h2>#}
+{#        {{ c.Post.Post_title }}#}
+{#         {{ c.Comment_description }}#}
+
+      {% endfor %}
+    </table>
 
 
-    {% endfor %}
+
 
 {% endblock content %}

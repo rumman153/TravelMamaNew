@@ -4,15 +4,65 @@
 
 {% block content %}
 
-    <table>
-        <tr><td>{{ Visitor.id }}</td></tr>
-        <tr><td>{{ Visitor.user.Visitor_name}}</td></tr>
-        <tr><td>{{ Visitor.Visitor_name}}</td></tr>
-        <tr><td>{{ Visitor.Visitor_email}}</td></tr>
-        <tr><td>{{ Visitor.Gender}}</td></tr>
 
-        <tr><td><img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200"></td></tr>
+    <h2>Your Profile:</h2>
+    <table border="2">
+
+              <tr>
+
+                <th>
+                    Your Id
+                </th>
+                <th>
+                     Full Name
+                </th>
+                <th>
+                     E-mail
+                </th>
+                <th>
+                     Gender
+                </th>
+                <th>
+                     Profile Picture
+                </th>
+
+              </tr>
+
+              <tr>
+                <td>
+                    {{ Visitor.id }}
+                </td>
+                <td>
+                   {{ Visitor.Visitor_name}}
+                </td>
+                <td>
+                    {{ Visitor.Visitor_email}}
+                </td>
+                <td>
+                   {{ Visitor.Gender}}
+                </td>
+                <td>
+                   <img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200">
+                </td>
+
+
+              </tr>
+
+
+
+
+
+
+
+{#    <table border="2">#}
+{#        <tr><td>{{ Visitor.id }}</td></tr>#}
+{#        <tr><td>{{ Visitor.user.Visitor_name}}</td></tr>#}
+{#        <tr><td>{{ Visitor.Visitor_name}}</td></tr>#}
+{#        <tr><td>{{ Visitor.Visitor_email}}</td></tr>#}
+{#        <tr><td>{{ Visitor.Gender}}</td></tr>#}
+{#        <tr><td><img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200"></td></tr>#}
 
     </table>
+
 
 {% endblock content %}

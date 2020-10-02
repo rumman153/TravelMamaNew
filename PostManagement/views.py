@@ -35,7 +35,10 @@ def insertPost(request):
         form = PostForm(request.POST,request.FILES)
         message = "Invalid Post Input!!!!!"
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.User = request.user
+            post.save()
+            
             message = "Post submitted successfully"
             form = PostForm()
 

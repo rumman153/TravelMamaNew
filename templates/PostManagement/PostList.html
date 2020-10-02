@@ -3,21 +3,76 @@
 {% load static %}
 
 {% block content %}
+    <h2>Post info: </h2>
+    <table border="2">
+        <tr>
+            <th>
+                Post ID
+            </th>
+            <th>
+                Post Title
+            </th>
+            <th>
+                Post By
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Post Catagory
+            </th>
+            <th>
+                Tags
+            </th>
+            <th>
+                Photos
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+        {% for p in Post %}
+        <tr>
+            <td>
+                {{ p.id }}
+            </td>
+            <td>
+                {{ p.Post_title }}
+            </td>
+            <td>
+                {{ p.User.username }}
+            </td>
+            <td>
+                {{ p.Post_location}}
+            </td>
+            <td>
+                {{ p.Post_catagory}}
+            </td>
+            <td>
+                {{ p.Post_tags}}
+            </td>
+            <td>
+                <img src="{{ p.Post_image.url }}" width="200" height="200" alt="image">
+            </td>
+            <td>
+                 {{ p.Post_description}}
+            </td>
+        </tr>
 
-    {% for p in Post %}
-        <h2>Post info:  {{ p.id }} </h2>
-        Post Name: {{ p.Post_title }} <br>
-        Post By: {{ p.User.username }} <br>
-        Location: {{ p.Post_location}} <br>
-        Post Category: {{ p.Post_catagory}} <br>
-        Post Tags:{{ p.Post_tags}} <br>
-        Post Image(Optional): <img src="{{ p.Post_image.url }}" width="800" height="500" alt="image"> <br>
-        Post Description: {{ p.Post_description}} <br>
 
 
 
+{#        <h2>Post info:  {{ p.id }} </h2>#}
+{#        Post Name: {{ p.Post_title }} <br>#}
+{#        Post By: {{ p.User.username }} <br>#}
+{#        Location: {{ p.Post_location}} <br>#}
+{#        Post Category: {{ p.Post_catagory}} <br>#}
+{#        Post Tags:{{ p.Post_tags}} <br>#}
+{#        Post Image(Optional): <img src="{{ p.Post_image.url }}" width="800" height="500" alt="image"> <br>#}
+{#        Post Description: {{ p.Post_description}} <br>#}
 
 
     {% endfor %}
+    </table>
 
 {% endblock content %}
