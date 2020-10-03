@@ -61,9 +61,12 @@
 {#            </td>#}
 {#        </tr>#}
 
-  <img class="card-img-top" src="{{ p.Post_image.url }}" alt="Card image cap" width="720"height="300">
+  <img class="card-img-top" src="{{ p.Post_image.url }}" alt="Card image cap" width="800"height="500">
   <div class="card-body">
-    <h5 class="card-title">{{ p.Post_title }}</h5>
+    <h4 class="card-title">{{ p.Post_title }}</h4>
+    Posted by: <h7 class="card-title">{{p.User.username}}</h7>
+      Post location: <h7 class="card-title">{{ p.Post_location}}</h7>
+    Post category: <h7 class="card-title"> {{ p.Post_catagory}}</h7>
     <p class="card-text">   {{ p.Post_description}}</p>
 
   </div>
