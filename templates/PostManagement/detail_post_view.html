@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+
+        <div class="card bg-light mb-2`" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{{ search.Post_image.url }}" class="card-img" alt="...">
+            </div>
+
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ search.Post_title }}</h5>
+                <p class="card-text">
+                    {{ search.Post_location }} <br>
+                    {{ search.Post_catagory }} <br>
+                    {{ search.Post_description }} <br>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+{% endblock content %}

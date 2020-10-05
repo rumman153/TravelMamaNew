@@ -4,62 +4,9 @@
 
 {% block content %}
     <h2>Post </h2>
-{#    <table border="2">#}
-{#        <tr>#}
-{#            <th>#}
-{#                Post ID#}
-{#            </th>#}
-{#            <th>#}
-{#                Post Title#}
-{#            </th>#}
-{#            <th>#}
-{#                Post By#}
-{#            </th>#}
-{#            <th>#}
-{#                Location#}
-{#            </th>#}
-{#            <th>#}
-{#                Post Catagory#}
-{#            </th>#}
-{#            <th>#}
-{#                Tags#}
-{#            </th>#}
-{#            <th>#}
-{#                Photos#}
-{#            </th>#}
-{#            <th>#}
-{#                Description#}
-{#            </th>#}
-{#        </tr>#}
     <div class="card mb-3">
 
         {% for p in Post %}
-{#        <tr>#}
-{#            <td>#}
-{#                {{ p.id }}#}
-{#            </td>#}
-{#            <td>#}
-{#                {{ p.Post_title }}#}
-{#            </td>#}
-{#            <td>#}
-{#                {{ p.User.username }}#}
-{#            </td>#}
-{#            <td>#}
-{#                {{ p.Post_location}}#}
-{#            </td>#}
-{#            <td>#}
-{#                {{ p.Post_catagory}}#}
-{#            </td>#}
-{#            <td>#}
-{#                {{ p.Post_tags}}#}
-{#            </td>#}
-{#            <td>#}
-{#                <img src="{{ p.Post_image.url }}" width="200" height="200" alt="image">#}
-{#            </td>#}
-{#            <td>#}
-{#                 {{ p.Post_description}}#}
-{#            </td>#}
-{#        </tr>#}
 
   <img class="card-img-top" src="{{ p.Post_image.url }}" alt="Card image cap" width="800"height="500">
   <div class="card-body">
@@ -68,23 +15,12 @@
       Post location: <h7 class="card-title">{{ p.Post_location}}</h7>
     Post category: <h7 class="card-title"> {{ p.Post_catagory}}</h7>
     <p class="card-text">   {{ p.Post_description}}</p>
+    <a href="{{ p.id }}">
+                    {# http://127.0.0.1:8000/products/product_id    #}
+        <button type="button" class="btn btn-outline-primary">Details</button>
+    </a>
 
   </div>
-
-
-
-
-
-{#        <h2>Post info:  {{ p.id }} </h2>#}
-{#        Post Name: {{ p.Post_title }} <br>#}
-{#        Post By: {{ p.User.username }} <br>#}
-{#        Location: {{ p.Post_location}} <br>#}
-{#        Post Category: {{ p.Post_catagory}} <br>#}
-{#        Post Tags:{{ p.Post_tags}} <br>#}
-{#        Post Image(Optional): <img src="{{ p.Post_image.url }}" width="800" height="500" alt="image"> <br>#}
-{#        Post Description: {{ p.Post_description}} <br>#}
-
-
     {% endfor%}
     </div>
 

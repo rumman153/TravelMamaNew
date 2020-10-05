@@ -31,10 +31,13 @@ urlpatterns = [
     path('profile/', visitor_views.show_profile, name='showProfile'),
     path('updateprofile/', visitor_views.createProfile, name='createProfile' ),
 
+    path('post/<int:post_id>', post_views.showDetails, name='detail_view'),
+    path('post/', post_views.showPost, name='Post'),
+
     path('comment/', comment_views.showComment, name='Comment'),
     path('insertcomment/', comment_views.insertComment, name='insertComment'),
 
-    path('post/', post_views.showPost, name='Post'),
+
     path('insertpost/', post_views.insertPost, name='insertPost'),
     path('', post_views.showHome, name='Homepage'),
 
