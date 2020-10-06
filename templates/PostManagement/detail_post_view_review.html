@@ -18,12 +18,12 @@
                     {{ search.Post_description }} <br>
 
                 </p>
-                 
               </div>
             </div>
           </div>
         </div>
-       <div class="container">
+
+    <div class="container">
         {% for review in search.reviews.all %}
             User: {{ review.user.username }}<br>
             Rating: {{ review.rating }} <br>
@@ -32,14 +32,16 @@
     </div>
 
     <div class="container">
+        {% if already_reviewed == False %}
         <form method="POST">
             {% csrf_token %}
             {{ form | crispy }}
-            <input type="submit">
+            <button type="submit">Comment</button>
         </form>
+        {% else %}
+            <h2>You have already submitted a comment</h2>
+        {% endif %}
     </div>
-
-
 
 
 {% endblock content %}

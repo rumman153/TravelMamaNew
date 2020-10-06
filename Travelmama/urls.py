@@ -32,6 +32,7 @@ urlpatterns = [
     path('updateprofile/', visitor_views.createProfile, name='createProfile' ),
 
     path('post/<int:post_id>', post_views.showDetails, name='detail_view'),
+    path('review/<int:post_id>', post_views.review_after_complete, name='review'),
     path('post/', post_views.showPost, name='Post'),
 
     path('comment/', comment_views.showComment, name='Comment'),
@@ -48,6 +49,8 @@ urlpatterns = [
     path('registration/', admin_views.registration, name='registration'),
 
     path('accounts/', include('django.contrib.auth.urls')),
+
+
 
 
 

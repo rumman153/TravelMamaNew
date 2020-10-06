@@ -54,6 +54,48 @@
 
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Post Category
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+            <form method="POST" action="{% url 'Post' %}">
+        {% csrf_token %}
+
+      <input  type="search" name="search" hidden value="Regions">
+
+      <button  type="submit" style="height: 40px ; width: 150px ">Regions</button>
+    </form>
+
+    <form method="POST" action="{% url 'Post' %}">
+        {% csrf_token %}
+
+      <input  type="search" name="search" hidden value="Popular Places">
+
+      <button  type="submit" style="height: 40px ; width: 150px ">Popular Places</button>
+
+    </form>
+
+    <form method="POST" action="{% url 'Post' %}">
+        {% csrf_token %}
+
+      <input  type="search" name="search" hidden value="Blog">
+
+      <button  type="submit" style="height: 40px ; width: 150px ">Blog</button>
+
+    </form>
+
+
+
+
+        </div>
+      </li>
+
+
+
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Comment
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -88,6 +130,7 @@
     <li class="nav-item">
         <a class="nav-link" href=" {% url 'logout' %}">Logout</a>
       </li>
+
 
 {% else %}
     <li class="nav-item">
@@ -132,3 +175,9 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
