@@ -59,26 +59,26 @@
             <form method="POST" action="{% url 'Post' %}">
         {% csrf_token %}
 
-      <input  type="search" name="search" hidden value="Regions">
+      <input  type="search" name="search" hidden value="Travel Blog">
 
-      <button  type="submit" style="height: 40px ; width: 150px ">Regions</button>
+      <button  type="submit" style="height: 40px ; width: 150px ">Travel Blog</button>
     </form>
 
     <form method="POST" action="{% url 'Post' %}">
         {% csrf_token %}
 
-      <input  type="search" name="search" hidden value="Popular Places">
+      <input  type="search" name="search" hidden value="Travel Guide">
 
-      <button  type="submit" style="height: 40px ; width: 150px ">Popular Places</button>
+      <button  type="submit" style="height: 40px ; width: 150px ">Travel Guide</button>
 
     </form>
 
     <form method="POST" action="{% url 'Post' %}">
         {% csrf_token %}
 
-      <input  type="search" name="search" hidden value="Blog">
+      <input  type="search" name="search" hidden value="Travel Package">
 
-      <button  type="submit" style="height: 40px ; width: 150px ">Blog</button>
+      <button  type="submit" style="height: 40px ; width: 150px ">Travel Package</button>
 
     </form>
 
@@ -91,7 +91,7 @@
 
 
         <li class="nav-item">
-        <a class="nav-link" href="{% url 'Admin' %}">Admin</a>
+        <a class="nav-link" href="{% url 'Admin' %}">Contact Us</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -32,10 +32,10 @@ class Post(models.Model):
     Post_title = models.CharField(max_length=200)
     Post_location = models.CharField(max_length=50)
     Post_catagory = models.CharField(max_length=50,
-                                     choices=(('Regions','Regions'),
-                                              ('Popular Places', 'Popular Places'),
-                                              ('Blog', 'Blog')),
-                                     default='Blog')
+                                     choices=(('Travel Blog', 'Travel Blog'),
+                                              ('Travel Guide', 'Travel Guide'),
+                                              ('Travel Package', 'Travel Package')),
+                                     default='Travel Blog')
     Post_tags = models.CharField(max_length=200)
     Post_image= models.ImageField(null='true')
     Post_description = models.TextField(max_length=100000)

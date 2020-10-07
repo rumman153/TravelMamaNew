@@ -61,7 +61,6 @@ def showDetails(request, post_id):
 
 def registration(request):
     form = UserCreationForm()
-
     if request.method == 'POST':
         form = UserCreationForm(request.POST,request.FILES)
         if form.is_valid():
@@ -97,11 +96,20 @@ def insertPost(request):
 
 
 def showHome(request):
-    # postList = Post.objects.all()
-    # context = {
-    #     'Post': postList
-    # }
-    return render(request, 'PostManagement/homepage.html')
+    postList = Post.objects.all()
+
+    if request.method == 'POST':
+        postList = Post.objects.filter(Post_title__icontains=request.POST['search'])
+        postTags = Post.objects.filter(Post_tags__icontains=request.POST['search'])
+        postcatagory = Post.objects.filter(Post_catagory__icontains=request.POST['search'])
+
+        postList = postList | postTags | postcatagory  # C = A U B set operation
+
+    context = {
+        'Post': postList
+    }
+
+    return render(request, 'PostManagement/homepage.html', context)
 
 
 @login_required

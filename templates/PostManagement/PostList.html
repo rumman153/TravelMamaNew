@@ -4,26 +4,30 @@
 
 {% block content %}
     <h2>Post </h2>
-    <div class="card mb-3">
+     <div class="row row-cols-1 row-cols-md-3">
 
         {% for p in Post %}
+ <div class="col mb-4">
 
-  <img class="card-img-top" src="{{ p.Post_image.url }}" alt="Card image cap" width="800"height="500">
-  <div class="card-body">
-    <h4 class="card-title">{{ p.Post_title }}</h4>
-    Posted by: <h7 class="card-title">{{p.User.username}}</h7>
-      Post location: <h7 class="card-title">{{ p.Post_location}}</h7>
-    Post category: <h7 class="card-title"> {{ p.Post_catagory}}</h7>
-    <p class="card-text">   {{ p.Post_description}}</p>
-    <a href="{{ p.id }}">
+          <div class="card h-100" >
+            <img src="{{ p.Post_image.url }}"class="card-img-top" alt="..." width="600" height="300">
+            <div class="card-body">
+              <h3 class="card-title" style="color:blue;">{{ p.Post_title }}</h3>
+              <p class="card-text">
+                  <p><b>Location: </b>{{ p.Post_location }}</p>
+                <p><b>Category: </b>{{ p.Post_catagory }}</p>
+                <p><b>Posted By: </b>{{ p.User.username }}</p>
+
+              </p>
+
+                {# http://127.0.0.1:8000/products/    #}
+                <a href="{{ p.id }}">
                     {# http://127.0.0.1:8000/products/product_id    #}
-        <button type="button" class="btn btn-outline-primary">Details</button>
-    </a>
-
-
-
-  </div>
+                    <button type="button" class="btn btn-outline-primary">Details</button>
+                </a>
+            </div>
+          </div>
+        </div>
     {% endfor%}
-    </div>
-
+</div>
 {% endblock content %}

@@ -5,48 +5,26 @@
 {% block content %}
 
 
-    <h2>Your Profile:</h2>
-    <table border="2">
 
-              <tr>
+    <div class="card bg-light mb-2`" >
+          <div class="row no-gutters">
+            <div class="col-md-3">
+                   <img src="{{ Visitor.Visitor_picture.url }}" height="300" width="300">
+            </div>
 
-                <th>
-                    Your Id
-                </th>
-                <th>
-                     Full Name
-                </th>
-                <th>
-                     E-mail
-                </th>
-                <th>
-                     Gender
-                </th>
-                <th>
-                     Profile Picture
-                </th>
-
-              </tr>
-
-              <tr>
-                <td>
-                    {{ Visitor.id }}
-                </td>
-                <td>
-                   {{ Visitor.Visitor_name}}
-                </td>
-                <td>
-                    {{ Visitor.Visitor_email}}
-                </td>
-                <td>
-                   {{ Visitor.Gender}}
-                </td>
-                <td>
-                   <img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200">
-                </td>
-
-
-              </tr>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">Profile</h3><br>
+                <p class="card-text">
+                    <b>Name :</b> {{ Visitor.Visitor_name }} <br><br>
+                    <b>ID :</b> {{ Visitor.id }} <br><br>
+                    <b>Email :</b> {{ Visitor.Visitor_email }} <br><br>
+                    <b>Gender :</b> {{ Visitor.Gender }} <br><br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -54,15 +32,7 @@
 
 
 
-{#    <table border="2">#}
-{#        <tr><td>{{ Visitor.id }}</td></tr>#}
-{#        <tr><td>{{ Visitor.user.Visitor_name}}</td></tr>#}
-{#        <tr><td>{{ Visitor.Visitor_name}}</td></tr>#}
-{#        <tr><td>{{ Visitor.Visitor_email}}</td></tr>#}
-{#        <tr><td>{{ Visitor.Gender}}</td></tr>#}
-{#        <tr><td><img src="{{ Visitor.Visitor_picture.url }}" height="200" width="200"></td></tr>#}
 
-    </table>
 
 
 {% endblock content %}

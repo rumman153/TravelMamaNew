@@ -2,36 +2,29 @@
 {% load crispy_forms_tags %}
 {% block content  %}
 
+    <div class="card mb-3">
+        <img src="{{ search.Post_image.url }}" class="img-fluid" alt="Responsive image">
+        <div class="card-body">
+    <h1 class="card-title">{{ search.Post_title }}</h1>
+      <p class="card-text"><small class="text-muted"><p><b>Location: </b>{{ search.Post_location }}</p>
+                <p><b>Category: </b>{{ search.Post_catagory }}</p>
+                <p><b>Posted By: </b>{{ search.User.username }}</p></small></p>
+    <p class="card-text">{{ search.Post_description }}</p>
 
-        <div class="card bg-light mb-2`" >
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="{{ search.Post_image.url }}" class="card-img" alt="...">
-            </div>
+  </div>
+</div>
 
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{ search.Post_title }}</h5>
-                <p class="card-text">
-                    {{ search.Post_location }} <br>
-                    {{ search.Post_catagory }} <br>
-                    {{ search.Post_description }} <br>
 
-                </p>
-                 
-              </div>
-            </div>
-          </div>
-        </div>
-       <div class="container">
+       <div class="card-body">
+       <h3>Leave a comment!!</h3><br>
         {% for review in search.reviews.all %}
-            User: {{ review.User.username }}<br>
+            Name: {{ review.User.username }}<br>
             Rating: {{ review.rating }} <br>
             Comment: {{ review.comment }} <br><br><br>
         {% endfor %}
     </div>
 
-    <div class="container">
+    <div class="card-body">
         <form method="POST">
             {% csrf_token %}
             {{ form | crispy }}
