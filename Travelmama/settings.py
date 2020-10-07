@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'AdminManagement.apps.AdminmanagementConfig',
     'ManageVisitor.apps.ManagevisitorConfig',
-    'CommentManagement.apps.CommentmanagementConfig',
     'PostManagement.apps.PostmanagementConfig'
 
 

@@ -25,7 +25,7 @@
         </div>
        <div class="container">
         {% for review in search.reviews.all %}
-            User: {{ review.user.username }}<br>
+            User: {{ review.User.username }}<br>
             Rating: {{ review.rating }} <br>
             Comment: {{ review.comment }} <br><br><br>
         {% endfor %}
@@ -39,7 +39,4 @@
         </form>
     </div>
 
-
-
-
-{% endblock content %}
+{% endblock %}

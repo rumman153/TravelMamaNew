@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
 from .models import Post,Review
-from .forms import PostForm,ReviewForm
+from .forms import PostForm, ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 
 def showPost(request):
@@ -20,13 +22,8 @@ def showPost(request):
         'Post': postList
     }
     return render(request, 'PostManagement/PostList.html', context)
-# def showPost(request):
-#     postList = Post.objects.all()
-#     context = {
-#         'Post': postList
-#     }
-#     return render(request, 'PostManagement/PostList.html', context)
 
+@login_required
 def showDetails(request, post_id):
     searched_post = get_object_or_404(Post, id=post_id)
 
@@ -35,12 +32,14 @@ def showDetails(request, post_id):
     if request.method == "POST":
         form = ReviewForm(request.POST)
 
+
         if form.is_valid:
             instance = form.save(commit=False)
-            instance.user = request.user
+            print(request.user)
+            instance.User = request.user
             instance.save()
 
-            #searched_post.reviews.add(instance)
+            searched_post.reviews.add(instance)
             searched_post.save()
 
     context = {
@@ -49,6 +48,14 @@ def showDetails(request, post_id):
     }
 
     return render(request, 'PostManagement/detail_post_view.html', context)
+
+# def showDetails(request, post_id):
+#
+#     searched_post = get_object_or_404(Post, id=post_id)
+#     context = {
+#         'search': searched_post
+#     }
+#     return render(request, 'PostManagement/detail_post_view.html', context)
 
 
 
@@ -128,6 +135,8 @@ def review_after_complete(request, post_id):
     context = {
         'search': searched_post,
         'form': form,
-        'already_reviewed': already_reviewed
+        # 'already_reviewed': already_reviewed
     }
     return render(request, 'PostManagement/detail_post_view_review.html', context)
+
+

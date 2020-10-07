@@ -20,7 +20,6 @@ from django.conf.urls.static import static
 
 from AdminManagement import views as admin_views
 from ManageVisitor import views as visitor_views
-from CommentManagement import views as comment_views
 from PostManagement import views as post_views
 
 
@@ -35,8 +34,6 @@ urlpatterns = [
     path('review/<int:post_id>', post_views.review_after_complete, name='review'),
     path('post/', post_views.showPost, name='Post'),
 
-    path('comment/', comment_views.showComment, name='Comment'),
-    path('insertcomment/', comment_views.insertComment, name='insertComment'),
 
 
     path('insertpost/', post_views.insertPost, name='insertPost'),
@@ -45,7 +42,6 @@ urlpatterns = [
 
     path('registration/', visitor_views.registration, name='registration'),
     path('registration/', post_views.registration, name='registration'),
-    path('registration/', comment_views.registration, name='registration'),
     path('registration/', admin_views.registration, name='registration'),
 
     path('accounts/', include('django.contrib.auth.urls')),
