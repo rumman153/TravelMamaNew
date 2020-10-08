@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="62499441-552f-4dea-abd4-99fab0ba0616" />
+  <component name="JupyterTrust" id="faf6ef8e-4cfb-4eaf-8a8b-a1e541d2939e" />
   <component name="ProjectId" id="1iKZjfJCdWWq3n8BDbxhPvnFfXd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,6 +79,8 @@
       <workItem from="1602076184431" duration="13521000" />
       <workItem from="1602127561077" duration="6556000" />
       <workItem from="1602134371273" duration="612000" />
+      <workItem from="1602136685176" duration="23000" />
+      <workItem from="1602136871187" duration="362000" />
     </task>
     <servers />
   </component>
@@ -90,6 +92,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1602087439439" />
+    <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1602136888407">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602136888407" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602057054753">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
