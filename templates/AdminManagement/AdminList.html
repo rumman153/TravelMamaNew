@@ -4,14 +4,24 @@
 {% block content %}
 
 
+    <br>
+    <p>Feel free to contact with our admin panel for any queries related to "Travel Mama".</p>
+    <h1>Admin Panel</h1>
     {% for a in Admin %}
-        <h2>Admin info:  {{ a.id }} </h2>
-        {{ a.Admin_name }} <br>
-        <img src="{{ a.Admin_profile.url }}" width="300" height="300" alt="image"> <br>
-        {{ a.Admin_email}} <br>
-        {{ a.Admin_contact}} <br>
-
-
+    <div class="card mb-3" style="max-width: 540px;" >
+  <div class="row no-gutters" >
+    <div class="col-md-4">
+      <img src="{{ a.Admin_profile.url }}" class="card-img" alt="..." height="268" width="180">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ a.Admin_name }}</h5>
+        <p class="card-text">Email : {{ a.Admin_email}} <br>
+        Mobile : {{ a.Admin_contact}} <br></p>
+      </div>
+    </div>
+  </div>
+</div>
     {% endfor %}
 
 {% endblock content %}

@@ -10,9 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>TravelMama</title>
+    <title>Travel Mama</title>
 </head>
-<body>
+<body style="background-color:lightsteelblue;">
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -30,8 +30,10 @@
 <a href="{% url 'createProfile' %}">Create Profile</a><br>
 <a href="{% url 'showProfile' %}">Show Profile</a><br>{% endcomment %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'Homepage' %}"><b>Travel Mama</b></a>
+<nav class="navbar navbar-expand-lg" style="background-color:deepskyblue;">
+    <a class="navbar-brand" href="{% url 'Homepage' %}"><b style="color:black;">T</b><b style="color:white;">ravel</b> <b style="color:white;">Mama</b>
+  </a>
+{#<b style="color:black;">T</b><b style="color:white;">ravel</b> <b style="color:white;">Mama</b>#}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -39,7 +41,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
           Post
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -50,7 +52,7 @@
       </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" style="color:white;"href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Post Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -91,10 +93,10 @@
 
 
         <li class="nav-item">
-        <a class="nav-link" href="{% url 'Admin' %}">Contact Us</a>
+        <a class="nav-link" href="{% url 'Admin' %}" style="color:white;">Contact Us</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profile
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -106,28 +108,28 @@
 
 {% if user.is_authenticated %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'showProfile' %}"><b> <h7>{{ user.username }}</h7></b>
+        <a class="nav-link" href="{% url 'showProfile' %}" style="color:white;"><b> <h7>{{ user.username }}</h7></b>
         </a>
       </li>
 
     <li class="nav-item">
-        <a class="nav-link" href=" {% url 'logout' %}">Logout</a>
+        <a class="nav-link" href=" {% url 'logout' %}" style="color:white;">Logout</a>
       </li>
 
 
 {% else %}
     <li class="nav-item">
-        <a class="nav-link" href="#"><b> <h7> Stranger!</h7></b>
+        <a class="nav-link" href="{% url 'registration' %}" style="color:white;"><b> <h7> Stranger!</h7></b>
         </a>
       </li>
 
 
     <li class="nav-item">
-        <a class="nav-link" href=" {% url 'registration' %}">Sign Up</a>
+        <a class="nav-link" href=" {% url 'registration' %}" style="color:white;">Sign Up</a>
       </li>
 
     <li class="nav-item">
-        <a class="nav-link" href=" {% url 'login' %}">Login</a>
+        <a class="nav-link" href=" {% url 'login' %}" style="color:white;">Login</a>
       </li>
 
 {% endif %}
@@ -136,8 +138,8 @@
     </ul>
     <form method="POST" action="{% url 'Post' %}">
                 {% csrf_token %}
-              <input  type="search" name="search">
-              <button  type="submit">Search</button>
+              <input  type="search" name="search" >
+              <button  type="submit" >Search</button>
             </form>
   </div>
 </nav>
@@ -151,12 +153,39 @@
 {#    <a href="{% url 'registration' %}">Sign Up</a><br>#}
 {#    <a href="{% url 'login' %}">Login</a><br>#}
 {#{% endif %}#}
-<div>
+<!--/.Footer Links-->
+
+
+
 {% block content %}
 
 {% endblock content %}
 </div>
 </body>
+
+    <footer style="background-color:deepskyblue;">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+<div class="container" align="center">
+<h5 style="color:white;">Follow Us</h5>
+<div class="social">
+  <a href="https://www.facebook.com/" id="share-fb" class="sharer button" style="color:white;"><i class="fa fa-3x fa-facebook-square"></i></a>
+  <a href="https://www.twitter.com" id="share-tw" class="sharer button" style="color:white;"><i class="fa fa-3x fa-twitter-square"></i></a>
+  <a href="https://www.linkedin.com" id="share-li" class="sharer button" style="color:white;"><i class="fa fa-3x fa-linkedin-square"></i></a>
+  <a href="https://www.pinterest.com/" id="share-gp" class="sharer button" style="color:white;"><i class="fa fa-3x fa-pinterest-square"></i></a>
+  <a href="https://www.youtube.com/" id="share-em" class="sharer button" style="color:white;"><i class="fa fa-3x fa-youtube-square"></i></a>
+</div>
+
+</div>
+ <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color:white;">Copyright © TravelMama
+{#            <a href="#"> TravelMama</a>#}
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 </html>
 
 
