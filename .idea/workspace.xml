@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="faf6ef8e-4cfb-4eaf-8a8b-a1e541d2939e" />
+  <component name="JupyterTrust" id="4d71f02c-3c23-4d41-b3bd-ca53276ba584" />
   <component name="ProjectId" id="1iKZjfJCdWWq3n8BDbxhPvnFfXd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -81,6 +81,7 @@
       <workItem from="1602134371273" duration="612000" />
       <workItem from="1602136685176" duration="23000" />
       <workItem from="1602136871187" duration="362000" />
+      <workItem from="1602137433367" duration="583000" />
     </task>
     <servers />
   </component>
