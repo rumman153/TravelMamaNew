@@ -16,6 +16,7 @@ def showPost(request):
         postTags = Post.objects.filter(Post_tags__icontains=request.POST['search'])
         postcatagory =Post.objects.filter(Post_catagory__icontains=request.POST['search'])
 
+
         postList = postList | postTags |  postcatagory # C = A U B set operation
 
     context = {
@@ -146,5 +147,11 @@ def review_after_complete(request, post_id):
         # 'already_reviewed': already_reviewed
     }
     return render(request, 'PostManagement/detail_post_view_review.html', context)
+
+@login_required
+def index_page(request):
+        logged_in_user_posts = Post.objects.filter(User=request.user)
+        return render(request, 'PostManagement/my_post.html', {'posts': logged_in_user_posts})
+
 
 

@@ -50,3 +50,5 @@ class Post(models.Model):
 
 # operationalerror no such table
 # python manage.py migrate --run-syncdb
+
+

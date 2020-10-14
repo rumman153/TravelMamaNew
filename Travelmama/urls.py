@@ -31,10 +31,12 @@ urlpatterns = [
     path('updateprofile/', visitor_views.createProfile, name='createProfile' ),
 
     path('post/<int:post_id>', post_views.showDetails, name='detail_view'),
+
+
     path('review/<int:post_id>', post_views.review_after_complete, name='review'),
     path('post/', post_views.showPost, name='Post'),
 
-
+    path('my_post/', post_views.index_page, name='posts'),
 
     path('insertpost/', post_views.insertPost, name='insertPost'),
     path('', post_views.showHome, name='Homepage'),
