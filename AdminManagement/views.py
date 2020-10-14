@@ -12,15 +12,15 @@ def showAdmin(request):
     return render(request, 'AdminManagement/AdminList.html', context)
 def registration(request):
     form = UserCreationForm()
-
+    msg = ""
     if request.method == 'POST':
         form = UserCreationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-
+            msg = "Account created successfully!!"
     context = {
-        'form' : form
-
+        'form' : form,
+        'msg' : msg
     }
     return render(request, 'AdminManagement/registration.html', context)
 

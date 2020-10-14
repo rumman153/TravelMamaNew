@@ -26,7 +26,7 @@ from PostManagement import views as post_views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('contact-us/', admin_views.showAdmin, name='Admin'),
+    path('about-us/', admin_views.showAdmin, name='Admin'),
     path('profile/', visitor_views.show_profile, name='showProfile'),
     path('updateprofile/', visitor_views.createProfile, name='createProfile' ),
 

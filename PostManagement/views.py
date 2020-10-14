@@ -62,14 +62,16 @@ def showDetails(request, post_id):
 
 def registration(request):
     form = UserCreationForm()
+    msg = ""
     if request.method == 'POST':
         form = UserCreationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
+            msg = "Account created successfully!!"
 
     context = {
-        'form' : form
-
+        'form' : form,
+        'msg' : msg
     }
     return render(request, 'PostManagement/registration.html', context)
 

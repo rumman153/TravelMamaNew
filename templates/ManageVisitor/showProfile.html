@@ -1,38 +1,37 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+<style>
+    div{background-color: white}
+</style>
 {% block content %}
 
 
-
-    <div class="card bg-light mb-2`">
-          <div class="row no-gutters" >
-            <div class="col-md-3">
-                   <img src="{{ Visitor.Visitor_picture.url }}" height="300" width="300">
-            </div>
-
-            <div class="col-md-8">
-              <div class="card-body">
-                <h3 class="card-title">Profile</h3><br>
-                <p class="card-text">
-                    <b>Name :</b> {{ Visitor.Visitor_name }} <br><br>
-                    <b>ID :</b> {{ Visitor.id }} <br><br>
-                    <b>Email :</b> {{ Visitor.Visitor_email }} <br><br>
-                    <b>Gender :</b> {{ Visitor.Gender }} <br><br>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+ <div class="col d-flex justify-content-center" >
 
 
+    <div class="card text-warning bg-secondary mb-6" style="max-width: 540px;">
+        <div class="card-header"><h1 style="color: black">Profile</h1></div>
+        <hr style="color: white">
+
+    <div class="col-md-4"  >
+      <img src="{{ Visitor.Visitor_picture.url }}" height="400" width="350">
+    </div>
+
+      <div class="card-body">
+
+          <h3 class="card-title" style="color: black"> Name : {{ Visitor.Visitor_name}}</h3> <hr>
+                              <h6 style="color: black">ID : {{ Visitor.id }} <h6><hr>
+
+          <h6 style="color: black">Email :</b> {{ Visitor.Visitor_email }} </h6><hr>
+          <h6 style="color: black">Gender :</b> {{ Visitor.Gender }} </h6><hr>
 
 
+      </div>
 
-
-
-
+  </div>
+  </div>
+    </div>
 
 
 {% endblock content %}

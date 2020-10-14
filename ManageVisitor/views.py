@@ -76,16 +76,17 @@ def show_profile(request):
 
 def registration(request):
     form = UserCreationForm()
-
+    msg = ""
     if request.method == 'POST':
         form = UserCreationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
 
+            msg = "Account created successfully!!"
             #return redirect(showProfile)
 
     context = {
-        'form' : form
-
+        'form' : form,
+        'msg' : msg
     }
     return render(request, 'ManageVisitor/registration.html', context)
